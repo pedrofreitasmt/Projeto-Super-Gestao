@@ -1,1 +1,1 @@
-<h3>Sobre nós</h3>
+<h3>Sobre nós (view)</h3>
