@@ -10,11 +10,14 @@ use App\Http\Controllers\SobreNosController;
 use App\Http\Controllers\TesteController;
 use Illuminate\Support\Facades\Route;
 
+// VIA GET
 Route::get('/', [PrincipalController::class, 'principal'])->name('site.index');
 Route::get('/sobre-nos', [SobreNosController::class, 'sobreNos'])->name('site.sobrenos');
 Route::get('/contato', [ContatoController::class, 'contato'])->name('site.contato');
 Route::get('/login', [LoginController::class, 'login'])->name('site.login');
 
+// VIA POST
+Route::post('/contato', [ContatoController::class, 'contato'])->name('site.contato');
 
 // Rotas com prefixo app
 Route::prefix('/app')->group(function () {
