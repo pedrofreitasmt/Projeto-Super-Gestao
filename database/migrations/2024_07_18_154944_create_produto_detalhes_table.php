@@ -19,6 +19,7 @@ return new class extends Migration
             $table->decimal('altura', 8, 2)->default(0.01);
             $table->timestamps();
 
+            // Adicionando relacionamento com a tabela produtos
             $table->foreign('produto_id')->references('id')->on('produtos');
             $table->unique('produto_id');
         });
