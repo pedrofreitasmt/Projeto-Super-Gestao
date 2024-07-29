@@ -17,7 +17,7 @@ Route::get('/contato', [ContatoController::class, 'contato'])->name('site.contat
 Route::get('/login', [LoginController::class, 'login'])->name('site.login');
 
 // VIA POST
-Route::post('/contato', [ContatoController::class, 'contato'])->name('site.contato');
+Route::post('/contato', [ContatoController::class, 'salvar'])->name('site.contato');
 
 // Rotas com prefixo app
 Route::prefix('/app')->group(function () {
