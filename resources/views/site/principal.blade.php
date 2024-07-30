@@ -31,7 +31,9 @@
                 <h1>Contato</h1>
                 <p>Caso tenha qualquer dúvida por favor entre em contato com nossa equipe pelo formulário abaixo.
                 <p>
-                    @component('site.layouts.components.form_contato', ['classe' => 'borda-branca']) {{-- Puxando o layout de formulário --}}
+                    @component('site.layouts.components.form_contato', [
+                        'classe' => 'borda-branca',
+                        'motivo_contatos' => $motivo_contatos]) {{-- Puxando o layout de formulário --}}
                     @endcomponent
             </div>
         </div>
