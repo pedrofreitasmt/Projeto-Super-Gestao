@@ -17,7 +17,10 @@ Route::middleware(LogAcessoMiddleware::class)
     ->get('/', [PrincipalController::class, 'principal'])
     ->name('site.index');
 
-Route::get('/sobre-nos', [SobreNosController::class, 'sobreNos'])->name('site.sobrenos');
+Route::middleware(LogAcessoMiddleware::class)
+    ->get('/sobre-nos', [SobreNosController::class, 'sobreNos'])
+    ->name('site.sobrenos');
+
 Route::get('/contato', [ContatoController::class, 'contato'])->name('site.contato');
 Route::get('/login', [LoginController::class, 'login'])->name('site.login');
 
