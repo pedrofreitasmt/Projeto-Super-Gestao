@@ -5,7 +5,7 @@
 @section('conteudo')
     <div class="conteudo-pagina">
         <div class="titulo-pagina-2">
-            <p>Fornecedor - Adicionar</p>
+            <p>Fornecedor - Editar</p>
         </div>
 
         <div class="menu">
@@ -16,19 +16,20 @@
         </div>
 
         <div class="informacao-pagina">
-            {{ $msg }}
+            {{ $msg ?? '' }}
             <div style="width: 30%; margin-left: auto; margin-right: auto;">
                 <form action="{{ route('app.fornecedor.adicionar') }}" method="post">
+                    <input type="hidden" name="id" value="{{ $fornecedor->id ?? '' }}">
                     @csrf
-                    <input type="text" name="nome" placeholder="Nome" class="borda-preta" value="{{ old('nome') }}">
+                    <input type="text" name="nome" placeholder="Nome" class="borda-preta" value="{{ $fornecedor->nome ?? old('nome') }}">
                     {{ $errors->has('nome') ? $errors->first('nome') : '' }}
-                    <input type="text" name="site" placeholder="Site" class="borda-preta" value="{{ old('site') }}">
+                    <input type="text" name="site" placeholder="Site" class="borda-preta" value="{{ $fornecedor->site ?? old('site') }}">
                     {{ $errors->has('site') ? $errors->first('site') : '' }}
-                    <input type="text" name="uf" placeholder="UF" class="borda-preta" value="{{ old('uf') }}">
+                    <input type="text" name="uf" placeholder="UF" class="borda-preta" value="{{ $fornecedor->uf ?? old('uf') }}">
                     {{ $errors->has('uf') ? $errors->first('uf') : '' }}
-                    <input type="text" name="email" placeholder="Email" class="borda-preta" value="{{ old('email') }}">
+                    <input type="text" name="email" placeholder="Email" class="borda-preta" value="{{ $fornecedor->email ?? old('email') }}">
                     {{ $errors->has('email') ? $errors->first('email') : '' }}
-                    <button type="submit" class="borda-preta">Cadastrar</button>
+                    <button type="submit" class="borda-preta">Atualizar</button>
                 </form>
             </div>
         </div>
